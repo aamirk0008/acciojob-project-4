@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Form Validation</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="form-title">Form Validation</h1>
+
+      <form id="dynamicForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Example@email.com"
+            onChange="emailOnChange()"
+          />
+          <div class="validation-icon" id="emailIcon">S</div>
+          <div class="error-message" id="emailError">
+            Make sure email is more than 3 characters and has @ and .
+          </div>
+          <div class="success-message" id="emailSuccess">Email looks good!</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Your Password"
+            onChange="passwordOnChange()"
+          />
+          <div class="validation-icon" id="passwordIcon">S</div>
+          <div class="error-message" id="passwordError">
+            Make sure password is more than 8 characters.
+          </div>
+          <div class="success-message" id="passwordSuccess">
+            Strong password!
+          </div>
+        </div>
+
+        <div class="overall-success" id="overallSuccess">
+          🎉 All good to go! Ready to submit.
+        </div>
+
+        <div class="validation-status" id="validationStatus">
+          Please fill in the form above
+        </div>
+
+        <button
+          type="submit"
+          class="submit-btn"
+          id="submitBtn"
+          onClick="submitOnClick(event)"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+<!-- Javascript file -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
